@@ -35,7 +35,9 @@ try {
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Here is the subject';
-    $mail->Body = "Se você recebeu esse email significa que as configurações do servidor ".$_SERVER['HTTP_HOST']." estão funcionando";
+    $mail->Body = "Se você recebeu esse email significa que as"
+            . " configurações do servidor ".$_SERVER['HTTP_HOST']." estão funcionando"
+            . "<br/> Dia " . date('d/m/Y') . " às " . date('H:i') . ", horário do servidor.</h4>";
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
